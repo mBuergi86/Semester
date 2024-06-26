@@ -62,6 +62,6 @@ Contributions are welcome! Please fork the repository, create a new branch, and 
 
 ## License
 
-This project is licensed under the GNU General Public v3 License. See the `LICENSE` file for more details.
+This project is licensed under the GNU General Public License v3. See the `LICENSE` file for more details.
 
 Feel free to adjust any sections or add more specific details as needed.
