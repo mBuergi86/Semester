@@ -1,0 +1,96 @@
+/* main.css */
+
+/* Importierungen */
+/* Import from styles/typography.css */
+@import "typography.css";
+
+/* Grundlegende Stilisierung */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--secondary-color);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul li a:active {
+    color: yellow;
+}
+
+nav ul li a:visited {
+    color: lightblue;
+}
+
+nav ul li a:link {
+    color: red;
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    header,
+    main,
+    footer {
+        padding: 1rem;
+    }
+}

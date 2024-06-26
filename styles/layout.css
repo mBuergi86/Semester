@@ -1,0 +1,94 @@
+/* layout.css */
+
+/* Flexbox für den gesamten Body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Main Content Layout */
+main {
+    flex: 1;
+}
+
+/* Projekt-Grid Layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* SNES-Spiel-Grid Layout */
+#games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.game-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.game-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+#search-bar {
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+/* Kontaktformular Layout */
+#contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Footer Layout */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive Layout Anpassungen */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
