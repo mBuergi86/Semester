@@ -11,12 +11,25 @@
 ## Project Structure
 ```
 term_web_innovativ/
-├── src/
-│   └── main.js
-├── styles/
-│   └── main.css
 ├── scripts/
-│   └── utils.js
+|   └── games.js
+|   └── language.js
+│   └── main.js
+├── src/
+│   └── assets
+│       └── icons
+|       └──  images
+│           └── snes
+│               └── ...  
+|       └──logos
+|   └── libs
+|       └── data
+|           └── json
+|               └── Updated_SNESGames.json
+├── styles/
+│   └── layout.css
+|   └── main.css
+|   └── typography.css
 ├── index.html
 ├── aboutme.html
 ├── contact.html
