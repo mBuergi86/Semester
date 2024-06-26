@@ -1,14 +1,17 @@
 # term_web_innovativ
 
 ## Overview
+
 `term_web_innovativ` is a web-based application showcasing innovative web technologies and techniques. It includes various HTML, CSS, and JavaScript components to demonstrate different aspects of web development.
 
 ## Features
+
 - **Responsive Design**: Optimized for various screen sizes and devices.
 - **Interactive Elements**: Includes a game and dynamic content for enhanced user engagement.
 - **Modular Codebase**: Organized into scripts, styles, and HTML files for better maintainability.
 
 ## Project Structure
+
 ```
 term_web_innovativ/
 ├── scripts/
@@ -20,7 +23,7 @@ term_web_innovativ/
 │       └── icons
 |       └──  images
 │           └── snes
-│               └── ...  
+│               └── ...
 |       └──logos
 |   └── libs
 |       └── data
@@ -38,11 +41,13 @@ term_web_innovativ/
 ```
 
 ## Technologies Used
+
 - **HTML**: For structuring content.
 - **CSS**: For styling and layout.
 - **JavaScript**: For interactive features.
 
 ## Setup
+
 To run this project locally, clone the repository and open `index.html` in your web browser:
 
 ```sh
@@ -52,9 +57,11 @@ open index.html
 ```
 
 ## Contributing
+
 Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request with your changes.
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+This project is licensed under the GNU General Public v3 License. See the `LICENSE` file for more details.
 
 Feel free to adjust any sections or add more specific details as needed.
