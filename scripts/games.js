@@ -18,7 +18,8 @@ const loadSNESGames = async () => {
 const groupGamesByAlphabet = (games) => {
   return games.reduce((acc, game) => {
     const firstLetter = (game.Game || "").charAt(0).toUpperCase();
-    acc[firstLetter] = [...(acc[firstLetter] || []), game];
+    if (!acc[firstLetter]) acc[firstLetter] = [];
+    acc[firstLetter].push(game);
     return acc;
   }, {});
 };
@@ -37,6 +38,14 @@ const checkImageExists = (src) => {
 const renderGames = async (games) => {
   const gamesContainer = document.getElementById("games-grid");
   gamesContainer.innerHTML = "";
+
+  if (games.length === 0) {
+    const notFoundMessage = document.createElement("p");
+    notFoundMessage.textContent = "Keine Spiele gefunden.";
+    notFoundMessage.style.gridColumn = "1 / -1";
+    gamesContainer.appendChild(notFoundMessage);
+    return;
+  }
 
   const groupedGames = groupGamesByAlphabet(games);
 
@@ -64,7 +73,7 @@ const renderGames = async (games) => {
         <p>${game.Year || ""}</p>
         <a href="${
           game.GameLink || "#"
-        }" target="_blank" rel="noopener noreferrer">Mehr erfahren</a>
+        }"target="_blank" rel="noopener noreferrer">Mehr erfahren</a>
       `;
 
         return gameCard;
@@ -76,21 +85,23 @@ const renderGames = async (games) => {
 
 // Funktion zum Filtern der Spiele basierend auf dem Suchbegriff
 const filterGames = (games, searchTerm) => {
+  // Wenn das Suchbegriff leer ist, gib alle Spiele zurück
+  if (!searchTerm.trim()) {
+    return games.slice().sort((a, b) => a.Game.localeCompare(b.Game));
+  }
+
   const words = searchTerm.toLowerCase().split(/\s+/);
-  return games.filter((game) =>
+  const filteredGames = games.filter((game) =>
     words.every(
       (word) =>
         ["Game", "Dev", "Publisher"].some(
-          (prop) =>
-            game[prop] &&
-            game[prop]
-              .toLowerCase()
-              .split(/\s+/)
-              .some((term) => term.startsWith(word)),
+          (prop) => game[prop] && game[prop].toLowerCase().includes(word),
         ) ||
-        (game.Year && game.Year.toString().startsWith(word)),
+        (game.Year && game.Year.toString().includes(word)),
     ),
   );
+
+  return filteredGames.sort((a, b) => a.Game.localeCompare(b.Game));
 };
 
 // Hauptfunktion zum Initialisieren der Seite
@@ -102,12 +113,18 @@ const init = async () => {
       throw new Error("Keine Spielliste gefunden.");
     }
 
-    renderGames(games);
+    renderGames(filterGames(games, ""));
 
     const searchBar = document.getElementById("search-bar");
+    let searchTimeout;
+
     searchBar.addEventListener("input", (event) => {
-      const searchTerm = event.target.value.trim();
-      renderGames(searchTerm ? filterGames(games, searchTerm) : games);
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        const searchTerm = event.target.value.trim();
+        const filteredAndSortedGames = filterGames(games, searchTerm);
+        renderGames(filteredAndSortedGames);
+      }, 1000);
     });
   } catch (error) {
     console.error("Fehler beim Laden der Spielliste:", error.message);
