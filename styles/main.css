@@ -3,6 +3,7 @@
 /* Importierungen */
 /* Import from styles/typography.css */
 @import "typography.css";
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
 
 /* Grundlegende Stilisierung */
 :root {
@@ -25,6 +26,52 @@ h1,
 h2,
 h3 {
     color: var(--secondary-color);
+}
+
+/* Back to Top Button */
+#backtop {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    text-align: center;
+    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    color: white;
+    height: 100%;
+    line-height: 40px;
+}
+
+#backtop:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+
+#backtop:active {
+    background-color: var(--background-color);
+}
+
+.material-symbols-outlined:active {
+    color: var(--primary-color);
+}
+
+#backtop.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Header Styles */
