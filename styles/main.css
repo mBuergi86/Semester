@@ -79,6 +79,7 @@ header {
     background-color: var(--primary-color);
     color: white;
     padding: 1rem;
+    text-wrap: nowrap;
 }
 
 header h1 {
@@ -98,38 +99,33 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    opacity: 0.8;
+}
+
+a.current:link,
+a.current:visited {
+    color: white;
+    text-decoration: underline;
+    opacity: 1;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+    opacity: 1;
 }
 
 nav ul li a:active {
     color: yellow;
-}
-
-nav ul li a:visited {
-    color: lightblue;
-}
-
-nav ul li a:link {
-    color: red;
-}
-
-/* Main Content Styles */
-main {
-    padding: 2rem;
-}
-
-section {
-    margin-bottom: 2rem;
+    opacity: 1;
 }
 
 /* Footer Styles */
 footer {
     background-color: var(--secondary-color);
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
 }
 
 /* Responsive Design */
