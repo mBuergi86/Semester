@@ -4,14 +4,14 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Stellt sicher, dass der Body die volle Höhe des Viewports einnimmt */
 }
 
 /* Header Layout */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Verteilt die Elemente gleichmäßig mit Platz dazwischen */
+    align-items: center; /* Zentriert die Elemente vertikal */
 }
 
 .logo-controller {
@@ -22,7 +22,7 @@ header {
 
 /* Main Content Layout */
 main {
-    flex: 1;
+    flex: 1; /* Nimmt den verfügbaren Platz im flexiblen Container ein */
     padding: 2rem;
 }
 
@@ -33,15 +33,15 @@ section {
 /* Projekt-Grid Layout */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Anpassbares Grid-Layout */
+    gap: 1rem; /* Abstand zwischen den Grid-Elementen */
 }
 
 /* SNES-Spiel-Grid Layout */
 #games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Anpassbares Grid-Layout */
+    gap: 1rem; /* Abstand zwischen den Grid-Elementen */
     padding: 1rem;
 }
 
@@ -53,7 +53,7 @@ section {
 }
 
 .game-card img {
-    max-width: 100%;
+    max-width: 100%; /* Bild passt sich der maximalen Breite an */
     height: auto;
 }
 
@@ -69,66 +69,66 @@ section {
     display: grid;
     gap: 1rem;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0 auto; /* Zentriert das Formular horizontal */
 }
 
 .flex-article {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Zwei Spalten im Grid */
     gap: 1rem;
 }
 
-.flex-article>.section-img {
+.flex-article > .section-img {
     display: flex;
-    justify-content: center;
-    align-items: start;
+    justify-content: center; /* Zentriert das Bild horizontal */
+    align-items: start; /* Richtet das Bild oben aus */
 }
 
 .flex-article img {
-    max-width: 100%;
+    max-width: 100%; /* Bild passt sich der maximalen Breite an */
     height: auto;
-    object-fit: contain;
-    position: sticky;
-    top: 80px;
+    object-fit: contain; /* Bild enthält den gesamten Bereich ohne Verzerrung */
+    position: sticky; /* Fixiert das Bild beim Scrollen */
+    top: 80px; /* Abstand vom oberen Rand */
 }
 
 /* Footer Layout */
 footer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Verteilt die Elemente gleichmäßig mit Platz dazwischen */
+    align-items: center; /* Zentriert die Elemente vertikal */
 }
 
 /* Responsive Layout Anpassungen */
 @media (max-width: 900px) {
     header {
-        flex-direction: column;
+        flex-direction: column; /* Anordnung der Header-Elemente in einer Spalte */
     }
 
     .controller-logo {
-        justify-content: center;
+        justify-content: center; /* Zentriert das Logo horizontal */
     }
 
     nav ul {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Anordnung der Navigationselemente in einer Spalte */
+        align-items: center; /* Zentriert die Navigationselemente horizontal */
     }
 
     nav ul li {
-        margin: 0.5rem 0;
+        margin: 0.5rem 0; /* Vertikaler Abstand zwischen Navigationselementen */
     }
 
     .project-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Einspaltiges Grid-Layout */
     }
 
     .flex-article {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Anordnung der Artikel-Elemente in einer Spalte */
     }
 
     footer {
-        flex-direction: column;
+        flex-direction: column; /* Anordnung der Footer-Elemente in einer Spalte */
     }
 }
