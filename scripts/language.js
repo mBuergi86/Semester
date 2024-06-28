@@ -1,41 +1,52 @@
-export default function setLanguageByLocation() {
-  const language = navigator.language || navigator.userLanguage;
+const COUNTRY_LANGUAGE_MAP = {
+  de: 'de',       // Ländercode für Deutschland
+  gb: 'en-GB',    // Ländercode für Großbritannien
+  us: 'en-US',    // Ländercode für die Vereinigten Staaten
+};
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      const lat = position.coords.latitude;
-      const lng = position.coords.longitude;
+function getBrowserLanguage() {
+  // Holt die Sprache des Browsers
+  return navigator.language || navigator.userLanguage;
+}
 
-      const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`;
+function getGeolocation() {
+  // Holt die Geolocation des Benutzers
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) {
+      reject(new Error('Geolocation is not supported by this browser.')); // Fehler, falls Geolocation nicht unterstützt wird
+    }
+    navigator.geolocation.getCurrentPosition(
+      (position) => resolve(position.coords), // Gibt die Koordinaten zurück, falls erfolgreich
+      (error) => reject(error) // Gibt den Fehler zurück, falls fehlgeschlagen
+    );
+  });
+}
 
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-          const countryCode = data.address.country_code;
+function reverseGeocode(lat, lng) {
+  // Führt eine Rückwärts-Geokodierung durch, um den Ländercode zu erhalten
+  const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`;
+  return fetch(url).then(response => response.json());
+}
 
-          switch (countryCode) {
-            case "de":
-              document.documentElement.lang = language.startsWith("de")
-                ? "de"
-                : `de-${countryCode}`;
-              break;
-            case "gb":
-              document.documentElement.lang = "en-GB";
-              break;
-            case "us":
-              document.documentElement.lang = "en-US";
-              break;
-            default:
-              document.documentElement.lang = `${language}-${countryCode}`;
-              break;
-          }
-        })
-        .catch((error) => {
-          console.error("Geolocation error:", error);
-        });
-    });
-  } else {
-    console.error("Geolocation is not supported by this browser.");
-    document.documentElement.lang = language;
+export default async function setLanguageByLocation() {
+  try {
+    const browserLanguage = getBrowserLanguage(); // Holt die Sprache des Browsers
+    const { latitude, longitude } = await getGeolocation(); // Holt die Geolocation des Benutzers
+    const { address } = await reverseGeocode(latitude, longitude); // Führt eine Rückwärts-Geokodierung durch, um die Adresse zu erhalten
+    const countryCode = address.country_code; // Holt den Ländercode aus der Adresse
+
+    let language;
+    if (countryCode in COUNTRY_LANGUAGE_MAP) {
+      language = COUNTRY_LANGUAGE_MAP[countryCode]; // Setzt die Sprache basierend auf dem Ländercode
+    } else if (countryCode === 'de' && browserLanguage.startsWith('de')) {
+      language = 'de'; // Setzt die Sprache auf Deutsch, wenn der Ländercode "de" ist und die Browsersprache mit "de" beginnt
+    } else {
+      language = `${browserLanguage}-${countryCode}`; // Setzt die Sprache basierend auf der Browsersprache und dem Ländercode
+    }
+
+    document.documentElement.lang = language; // Setzt die Sprache des Dokuments
+  } catch (error) {
+    console.error('Der Fehler ist aufgetreten:', error); // Gibt einen Fehler aus, falls etwas schiefgeht
+    document.documentElement.lang = getBrowserLanguage(); // Setzt die Sprache auf die Browsersprache als Fallback
   }
 }
