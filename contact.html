@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles/layout.css">
     <script type="module" src="scripts/main.js" defer></script>
     <link rel="shortcut icon" href="src/assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
@@ -20,8 +22,21 @@
     <header>
         <img src="src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
             class="logo-controller">
-        <nav>
-            <ul>
+
+        <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+            <span class="material-symbols-outlined arrow_down">
+                keyboard_arrow_down
+            </span>
+            <span class="material-symbols-outlined arrow_down">
+                keyboard_arrow_down
+            </span>
+            <span class="material-symbols-outlined arrow_down">
+                keyboard_arrow_down
+            </span>
+        </button>
+
+        <nav class="menu-list">
+            <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutme.html">Über mich</a></li>
                 <li><a href="project.html">Projekte</a></li>
