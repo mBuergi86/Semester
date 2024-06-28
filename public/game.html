@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNES - Listen</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <script type="module" src="scripts/main.js" defer></script>
+    <link rel="shortcut icon" href="src/assets/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <a id="backtop">
+        <span class="material-symbols-outlined">
+            vertical_align_top
+        </span>
+    </a>
+    <header>
+        <img src="src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
+            class="logo-controller">
+        <button type="button" class="nav-toggle" aria-label="Toggle navigation"> <span
+                class="material-symbols-outlined arrow_down">
+                keyboard_arrow_down
+            </span>
+            <span class="material-symbols-outlined arrow_down">
+                keyboard_arrow_down
+            </span>
+            <span class="material-symbols-outlined arrow_down">
+                keyboard_arrow_down
+            </span>
+        </button>
+
+        <nav class="menu-list">
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">Über mich</a></li>
+                <li><a href="specifications.html">Spezifikationen</a></li>
+                <li><a href="game.html" class="current">SNES Spielen</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="snes-games">
+            <h2>SNES Spielen</h2>
+            <!-- Hier kommt eine Tabelle oder ein Grid mit Projekten -->
+            <input type="text" id="search-bar" placeholder="Suche nach Spielen...">
+            <div id="games-grid">
+                <!-- Projekt-Elemente hier einfügen -->
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2024 Mein Portfolio. Alle Rechte vorbehalten.</p>
+            <nav>
+                <ul>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+                </ul>
+            </nav>
+        </footer>
+</body>
+
+</html>
