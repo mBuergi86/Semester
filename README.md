@@ -14,30 +14,19 @@
 
 ```
 term_web_innovativ/
-├── scripts/
-|   └── games.js
-|   └── language.js
-│   └── main.js
-├── src/
-│   └── assets
-│       └── icons
-|       └──  images
-│           └── snes
-│               └── ...
-|       └──logos
-|   └── libs
-|       └── data
-|           └── json
-|               └── Updated_SNESGames.json
-├── styles/
-│   └── layout.css
-|   └── main.css
-|   └── typography.css
-├── index.html
-├── aboutme.html
-├── contact.html
-├── game.html
-└── project.html
+├── public/
+│   ├── scripts/
+│   ├── src/
+│   ├── styles/
+│   ├── index.html
+│   ├── aboutme.html
+│   ├── contact.html
+│   ├── game.html
+│   └── project.html
+├── bun.lockb
+├── index.js
+├── jsconfig.json
+└── package.json
 ```
 
 ## Technologies Used
