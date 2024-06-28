@@ -1,0 +1,44 @@
+table {
+    border-collapse: separate; /* Verbindet alle Zellen mit Ecken */
+    border-spacing: 0; /* Vermeidet Randabstand */
+    width: 100%; /* Breite der Tabelle */
+    border-radius: 0.3rem; /* Abrundung der Ecken */
+    overflow: hidden; /* Versteckt den Inhalt */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Leichtes Grauton */
+    padding: 0.5rem; /* Abstand zwischen Zellen */
+    text-align: left; /* Text linksbuendig */
+}
+
+th {
+    background-color: lightslategray; /* Helles Grau für die Kopfzeile */
+    color: #fff; /* Weisser Text */
+}
+
+tr:nth-child(even) {
+    background-color: green; /* Grüne Hintergrundfarbe */
+    color: white; /* Weisser Text */
+}
+
+tr:nth-child(odd) {
+    background-color: white; /* Weisse Hintergrundfarbe */
+}
+
+tr:hover {
+    background-color: red; /* Rote Hintergrund für Hover-Effekt */
+    color: #fff; /* Weisser Text beim Hover */
+}
+
+/* Responsives Design für Bildschirme bis 900px Breite */
+@media (max-width: 900px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        border: none;
+    }
+    
+    td {
+        border: none;
+    }
+}
