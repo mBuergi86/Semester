@@ -6,6 +6,7 @@ const loadSNESGames = async () => {
       if (!Array.isArray(data) || data.length === 0) {
         throw new Error("Keine gültige Spielliste gefunden.");
       }
+      // Sortiert die Spiele alphabetisch nach dem Spielnamen
       return data.sort((a, b) => a.Game.localeCompare(b.Game));
     })
     .catch((error) => {
@@ -63,21 +64,19 @@ const renderGames = async (games) => {
         const imageExists = await checkImageExists(game.GamePicture);
         const finalImage = imageExists
           ? game.GamePicture
-          : "https://placehold.co/256x224";
+          : "https://placehold.co/256x224"; // Platzhalterbild, wenn das Originalbild nicht existiert
 
         gameCard.innerHTML = `
-        <h4>${game.Game}</h4>
-        <img src="${finalImage}" alt="${game.Game}" loading="lazy">
-        <p>${game.Dev || ""}</p>
-        <p>${game.Publisher || ""}</p>
-        <p>${game.Year || ""}</p>
-        <a href="${
-          game.GameLink || "#"
-        }"target="_blank" rel="noopener noreferrer">Mehr erfahren</a>
-      `;
+          <h4>${game.Game}</h4>
+          <img src="${finalImage}" alt="${game.Game}" loading="lazy">
+          <p>${game.Dev || ""}</p>
+          <p>${game.Publisher || ""}</p>
+          <p>${game.Year || ""}</p>
+          <a href="${game.GameLink || "#"}" target="_blank" rel="noopener noreferrer">Mehr erfahren</a>
+        `;
 
         return gameCard;
-      }),
+      })
     );
     gameCards.forEach((card) => gamesContainer.appendChild(card));
   }
@@ -95,10 +94,10 @@ const filterGames = (games, searchTerm) => {
     words.every(
       (word) =>
         ["Game", "Dev", "Publisher"].some(
-          (prop) => game[prop] && game[prop].toLowerCase().includes(word),
+          (prop) => game[prop] && game[prop].toLowerCase().includes(word)
         ) ||
-        (game.Year && game.Year.toString().includes(word)),
-    ),
+        (game.Year && game.Year.toString().includes(word))
+    )
   );
 
   return filteredGames.sort((a, b) => a.Game.localeCompare(b.Game));
@@ -107,13 +106,13 @@ const filterGames = (games, searchTerm) => {
 // Hauptfunktion zum Initialisieren der Seite
 const init = async () => {
   try {
-    const games = await loadSNESGames();
+    const games = await loadSNESGames(); // Laden der Spiele
 
     if (games.length === 0) {
       throw new Error("Keine Spielliste gefunden.");
     }
 
-    renderGames(filterGames(games, ""));
+    renderGames(filterGames(games, "")); // Spiele rendern
 
     const searchBar = document.getElementById("search-bar");
     let searchTimeout;
@@ -124,7 +123,7 @@ const init = async () => {
         const searchTerm = event.target.value.trim();
         const filteredAndSortedGames = filterGames(games, searchTerm);
         renderGames(filteredAndSortedGames);
-      }, 1000);
+      }, 1000); // Debounce-Zeit von 1 Sekunde
     });
   } catch (error) {
     console.error("Fehler beim Laden der Spielliste:", error.message);
