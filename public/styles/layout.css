@@ -34,6 +34,23 @@ section {
     margin-top: 2rem;
 }
 
+.top-games-container {
+    display: grid;
+    /* Verwendung von Gridbox */
+    grid-template-columns: repeat(4, minmax(150px, 350px));
+    /* Anpassbares Grid-Layout */
+    gap: 2rem;
+    /* Abstand zwischen den Grid-Elementen */
+    justify-content: center;
+    /* Zentriert das Grid */
+}
+
+.top-games-img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
 /* Projekt-Grid Layout */
 .project-grid {
     display: grid;
@@ -169,6 +186,14 @@ footer {
     .controller-logo {
         justify-content: center;
         /* Zentriert das Logo horizontal */
+    }
+
+    .top-games-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Anpassbares Grid-Layout */
+        gap: 1rem;
+        /* Abstand zwischen den Grid-Elementen */
     }
 
     nav ul {
