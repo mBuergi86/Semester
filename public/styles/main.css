@@ -112,7 +112,7 @@ h3 {
 }
 
 #backtop:hover {
-    cursor: pointer;
+    cursor: none;
     /* Mauszeiger ändert sich bei Hover */
     background-color: var(--secondary-color);
     /* Ändert die Hintergrundfarbe bei Hover */
@@ -257,7 +257,7 @@ footer {
         /* Kein Rahmen */
         margin-top: 2rem;
         /* Abstand oben */
-        cursor: pointer;
+        cursor: none;
         /* Mauszeiger ändert sich bei Hover */
         transition: all 0.3s ease-in-out;
         /* Übergangseffekte */
