@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <img src="./src/assets/icons/super_mario_mushroom.png" alt="mushroom" class="mushroom">
     <a id="backtop">
         <span class="material-symbols-outlined">
             vertical_align_top
@@ -50,9 +51,20 @@
         <section id="contact">
             <h2>Kontakt</h2>
             <form id="contact-form">
-                <!-- Kontaktformular hier einfügen -->
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">E-Mail-Adresse:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="subject">Betreff:</label>
+                    <input type="text" id="subject" name="subject" required>
+                    <label for="message">Nachricht:</label>
+                    <textarea id="message" name="message" rows="20" required></textarea>
+                    <input type="submit" value="Senden" id="submit-btn">
             </form>
         </section>
+        <div class="background-img">
+            <img src="src/assets/images/image/mario_luigi.png" alt="">
+        </div>
     </main>
 
     <footer>
