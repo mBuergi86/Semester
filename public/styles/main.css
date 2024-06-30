@@ -1,158 +1,279 @@
 /* main.css */
 
 /* Importierungen */
-@import "typography.css"; /* Importiert Typografie-Stile */
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0'); /* Importiert Google Fonts */
+@import "typography.css";
+/* Importiert Typografie-Stile */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+/* Importiert Google Fonts */
 
 /* Grundlegende Stilisierung */
 :root {
-    --primary-color: #3498db; /* Primärfarbe */
-    --secondary-color: #2c3e50; /* Sekundärfarbe */
-    --text-color: #333; /* Textfarbe */
-    --background-color: #f4f4f4; /* Hintergrundfarbe */
+    --primary-color: #3498db;
+    /* Primärfarbe */
+    --secondary-color: #2c3e50;
+    /* Sekundärfarbe */
+    --text-color: #333;
+    /* Textfarbe */
+    --background-color: #f4f4f4;
+    /* Hintergrundfarbe */
 }
 
 body {
-    font-family: 'Orbitron', sans-serif; /* Schriftart für den Text */
-    line-height: 1.6; /* Zeilenhöhe */
-    color: var(--text-color); /* Textfarbe */
-    background-color: var(--background-color); /* Hintergrundfarbe */
-    margin: 0; /* Entfernt den Standardaußenabstand */
-    padding: 0; /* Entfernt den Standardinnenabstand */
+    font-family: 'Orbitron', sans-serif;
+    /* Schriftart für den Text */
+    line-height: 1.6;
+    /* Zeilenhöhe */
+    color: var(--text-color);
+    /* Textfarbe */
+    background-color: var(--background-color);
+    /* Hintergrundfarbe */
+    margin: 0;
+    /* Entfernt den Standardaußenabstand */
+    padding: 0;
+    /* Entfernt den Standardinnenabstand */
+    cursor: none;
+    /* Cursor wird nicht angezeigt */
 }
 
-h1, h2, h3 {
-    color: var(--secondary-color); /* Farbe für Überschriften */
+h1,
+h2,
+h3 {
+    color: var(--secondary-color);
+    /* Farbe für Überschriften */
+}
+
+/* Animation mit einer Einfachdrehung */
+.mushroom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: auto;
+    pointer-events: none;
+    z-index: 10000;
+    animation-name: mushroom_rotate;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes mushroom_rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Zurück nach oben Button */
 #backtop {
-    display: inline-block; /* Blockelement im Inline-Format */
-    position: fixed; /* Fixiert den Button an einer Position */
-    bottom: 20px; /* Abstand vom unteren Rand */
-    right: 20px; /* Abstand vom rechten Rand */
-    width: 40px; /* Breite des Buttons */
-    height: 40px; /* Höhe des Buttons */
-    background-color: var(--primary-color); /* Hintergrundfarbe */
-    border-radius: 3px; /* Abrundung der Ecken */
-    text-align: center; /* Zentriert den Text */
-    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Übergänge für Farbe, Sichtbarkeit und Deckkraft */
-    opacity: 0; /* Anfangs unsichtbar */
-    visibility: hidden; /* Anfangs nicht sichtbar */
-    z-index: 9999; /* Hoher Stapelindex */
+    display: inline-block;
+    /* Blockelement im Inline-Format */
+    position: fixed;
+    /* Fixiert den Button an einer Position */
+    bottom: 20px;
+    /* Abstand vom unteren Rand */
+    right: 20px;
+    /* Abstand vom rechten Rand */
+    width: 40px;
+    /* Breite des Buttons */
+    height: 40px;
+    /* Höhe des Buttons */
+    background-color: var(--primary-color);
+    /* Hintergrundfarbe */
+    border-radius: 3px;
+    /* Abrundung der Ecken */
+    text-align: center;
+    /* Zentriert den Text */
+    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    /* Übergänge für Farbe, Sichtbarkeit und Deckkraft */
+    opacity: 0;
+    /* Anfangs unsichtbar */
+    visibility: hidden;
+    /* Anfangs nicht sichtbar */
+    z-index: 9999;
+    /* Hoher Stapelindex */
 }
 
 .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; /* Schriftvariationseinstellungen */
-    color: white; /* Schriftfarbe */
-    height: 100%; /* Höhe auf 100% des Containers */
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    /* Schriftvariationseinstellungen */
+    color: white;
+    /* Schriftfarbe */
+    height: 100%;
+    /* Höhe auf 100% des Containers */
 }
 
 #backtop .material-symbols-outlined {
-    line-height: 40px; /* Zeilenhöhe für Zentrierung */
+    line-height: 40px;
+    /* Zeilenhöhe für Zentrierung */
 }
 
 #backtop:hover {
-    cursor: pointer; /* Mauszeiger ändert sich bei Hover */
-    background-color: var(--secondary-color); /* Ändert die Hintergrundfarbe bei Hover */
+    cursor: pointer;
+    /* Mauszeiger ändert sich bei Hover */
+    background-color: var(--secondary-color);
+    /* Ändert die Hintergrundfarbe bei Hover */
 }
 
 #backtop:active {
-    background-color: var(--background-color); /* Ändert die Hintergrundfarbe bei Aktivierung */
+    background-color: var(--background-color);
+    /* Ändert die Hintergrundfarbe bei Aktivierung */
 }
 
 .material-symbols-outlined:active {
-    color: var(--primary-color); /* Ändert die Schriftfarbe bei Aktivierung */
+    color: var(--primary-color);
+    /* Ändert die Schriftfarbe bei Aktivierung */
 }
 
 #backtop.show {
-    opacity: 1; /* Sichtbar */
-    visibility: visible; /* Sichtbar */
+    opacity: 1;
+    /* Sichtbar */
+    visibility: visible;
+    /* Sichtbar */
 }
 
 /* Header-Stile */
 header {
-    background-color: var(--primary-color); /* Hintergrundfarbe */
-    color: white; /* Schriftfarbe */
-    padding: 1rem; /* Innenabstand */
-    text-wrap: nowrap; /* Kein Zeilenumbruch */
+    background-color: var(--primary-color);
+    /* Hintergrundfarbe */
+    color: white;
+    /* Schriftfarbe */
+    padding: 1rem;
+    /* Innenabstand */
+    text-wrap: nowrap;
+    /* Kein Zeilenumbruch */
 }
 
 header h1 {
-    margin: 0; /* Kein Außenabstand */
+    margin: 0;
+    /* Kein Außenabstand */
 }
 
 nav ul {
-    list-style-type: none; /* Keine Aufzählungszeichen */
-    margin: 0; /* Kein Außenabstand */
-    padding: 0; /* Kein Innenabstand */
+    list-style-type: none;
+    /* Keine Aufzählungszeichen */
+    margin: 0;
+    /* Kein Außenabstand */
+    padding: 0;
+    /* Kein Innenabstand */
 }
 
 nav ul li {
-    display: inline; /* Elemente nebeneinander anzeigen */
-    margin-right: 1rem; /* Abstand rechts */
+    display: inline;
+    /* Elemente nebeneinander anzeigen */
+    margin-right: 1rem;
+    /* Abstand rechts */
 }
 
 nav ul li a {
-    color: white; /* Schriftfarbe */
-    text-decoration: none; /* Keine Unterstreichung */
-    opacity: 0.8; /* Leicht transparent */
+    color: white;
+    /* Schriftfarbe */
+    text-decoration: none;
+    /* Keine Unterstreichung */
+    opacity: 0.8;
+    /* Leicht transparent */
+}
+
+a {
+    cursor: none;
 }
 
 .nav-toggle {
-    display: none; /* Nicht sichtbar */
+    display: none;
+    /* Nicht sichtbar */
 }
 
 /* Stile für aktive Links */
-a.current:link, a.current:visited {
-    color: white; /* Schriftfarbe */
-    text-decoration: underline; /* Unterstrichen */
-    opacity: 1; /* Voll sichtbar */
+nav ul li a.current:link,
+nav ul li a.current:visited {
+    color: white;
+    /* Schriftfarbe */
+    text-decoration: underline;
+    /* Unterstrichen */
+    opacity: 1;
+    /* Voll sichtbar */
 }
 
 /* Hover- und Aktivzustände für Links */
 nav ul li a:hover {
-    text-decoration: underline; /* Unterstrichen bei Hover */
-    opacity: 1; /* Voll sichtbar bei Hover */
+    text-decoration: underline;
+    /* Unterstrichen bei Hover */
+    opacity: 1;
+    /* Voll sichtbar bei Hover */
 }
 
 nav ul li a:active {
-    color: yellow; /* Farbe ändert sich bei Aktivierung */
-    opacity: 1; /* Voll sichtbar bei Aktivierung */
+    color: yellow;
+    /* Farbe ändert sich bei Aktivierung */
+    opacity: 1;
+    /* Voll sichtbar bei Aktivierung */
+}
+
+/* Main-Stile */
+.background-img {
+    position: fixed;
+    bottom: 3rem;
+}
+
+.background-img img {
+    width: 35%;
+    height: auto;
+    z-index: 1;
 }
 
 /* Footer-Stile */
 footer {
-    background-color: var(--secondary-color); /* Hintergrundfarbe */
-    color: white; /* Schriftfarbe */
-    padding: 0.5rem; /* Innenabstand */
-    font-size: 0.8rem; /* Schriftgröße */
-    flex-shrink: 0; /* Verhindert das Schrumpfen */
+    background-color: var(--secondary-color);
+    /* Hintergrundfarbe */
+    color: white;
+    /* Schriftfarbe */
+    padding: 0.5rem;
+    /* Innenabstand */
+    font-size: 0.8rem;
+    /* Schriftgröße */
+    flex-shrink: 0;
+    /* Verhindert das Schrumpfen */
 }
 
 /* Responsives Design */
 @media (max-width: 900px) {
 
-    header, main, footer {
-        padding: 1rem; /* Innenabstand */
+    header,
+    main,
+    footer {
+        padding: 1rem;
+        /* Innenabstand */
     }
 
     .nav-toggle {
-        display: block; /* Sichtbar */
-        background: none; /* Kein Hintergrund */
-        border: none; /* Kein Rahmen */
-        margin-top: 2rem; /* Abstand oben */
-        cursor: pointer; /* Mauszeiger ändert sich bei Hover */
-        transition: all 0.3s ease-in-out; /* Übergangseffekte */
+        display: block;
+        /* Sichtbar */
+        background: none;
+        /* Kein Hintergrund */
+        border: none;
+        /* Kein Rahmen */
+        margin-top: 2rem;
+        /* Abstand oben */
+        cursor: pointer;
+        /* Mauszeiger ändert sich bei Hover */
+        transition: all 0.3s ease-in-out;
+        /* Übergangseffekte */
     }
 
-    .nav-toggle:active, .nav-toggle:focus {
-        outline: none; /* Keine Umrandung bei Fokus */
+    .nav-toggle:active,
+    .nav-toggle:focus {
+        outline: none;
+        /* Keine Umrandung bei Fokus */
     }
 
     .nav-toggle .material-symbols-outlined.arrow_down {
-        display: block; /* Sichtbar */
-        margin: -20px 0 4px 0; /* Abstände */
+        display: block;
+        /* Sichtbar */
+        margin: -20px 0 4px 0;
+        /* Abstände */
     }
 
     /* Animationsverzögerung für die Pfeile */
@@ -182,60 +303,86 @@ footer {
 
     @keyframes flash-down {
         0% {
-            opacity: 0; /* Start-Deckkraft */
-            transform: translateY(-5px); /* Start-Position */
+            opacity: 0;
+            /* Start-Deckkraft */
+            transform: translateY(-5px);
+            /* Start-Position */
         }
 
         50% {
-            opacity: 0.5; /* Zwischen-Deckkraft */
-            transform: translateY(-2.5px); /* Zwischen-Position */
+            opacity: 0.5;
+            /* Zwischen-Deckkraft */
+            transform: translateY(-2.5px);
+            /* Zwischen-Position */
         }
 
         100% {
-            opacity: 1; /* End-Deckkraft */
-            transform: translateY(0); /* End-Position */
+            opacity: 1;
+            /* End-Deckkraft */
+            transform: translateY(0);
+            /* End-Position */
         }
     }
 
     @keyframes flash-up {
         0% {
-            opacity: 1; /* Start-Deckkraft */
-            transform: translateY(0); /* Start-Position */
+            opacity: 1;
+            /* Start-Deckkraft */
+            transform: translateY(0);
+            /* Start-Position */
         }
 
         50% {
-            opacity: 0.5; /* Zwischen-Deckkraft */
-            transform: translateY(-2.5px); /* Zwischen-Position */
+            opacity: 0.5;
+            /* Zwischen-Deckkraft */
+            transform: translateY(-2.5px);
+            /* Zwischen-Position */
         }
 
         100% {
-            opacity: 0; /* End-Deckkraft */
-            transform: translateY(-5px); /* End-Position */
+            opacity: 0;
+            /* End-Deckkraft */
+            transform: translateY(-5px);
+            /* End-Position */
         }
     }
 
     .nav-toggle .material-symbols-outlined.arrow_down {
-        animation: flash-down 2s ease infinite; /* Abwärts-Animation */
+        animation: flash-down 2s ease infinite;
+        /* Abwärts-Animation */
     }
 
     .nav-toggle .material-symbols-outlined.arrow_down.open {
-        animation: flash-up 2s ease infinite; /* Aufwärts-Animation */
+        animation: flash-up 2s ease infinite;
+        /* Aufwärts-Animation */
     }
 
     .nav-toggle.open {
-        transform: rotate(180deg); /* Dreht das Element */
-        margin: 0 0 1rem 0; /* Abstand unten */
-        transition: all 0.3s ease-in-out; /* Übergangseffekte */
+        transform: rotate(180deg);
+        /* Dreht das Element */
+        margin: 0 0 1rem 0;
+        /* Abstand unten */
+        transition: all 0.3s ease-in-out;
+        /* Übergangseffekte */
     }
 
     .menu-list {
-        display: block; /* Sichtbar */
-        max-height: 0; /* Maximale Höhe */
-        overflow: hidden; /* Versteckt überlaufenden Inhalt */
-        transition: max-height 0.3s ease-out; /* Übergangseffekte */
+        display: block;
+        /* Sichtbar */
+        max-height: 0;
+        /* Maximale Höhe */
+        overflow: hidden;
+        /* Versteckt überlaufenden Inhalt */
+        transition: max-height 0.3s ease-out;
+        /* Übergangseffekte */
     }
 
     .menu-list.open {
-        max-height: 18rem; /* Maximale Höhe bei geöffnetem Zustand */
+        max-height: 18rem;
+        /* Maximale Höhe bei geöffnetem Zustand */
+    }
+
+    .mushroom {
+        display: none;
     }
 }
