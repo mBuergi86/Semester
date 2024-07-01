@@ -50,8 +50,13 @@
     <main>
         <section id="impressum">
             <h2>Forum</h2>
-            <!-- Hier kommt der Inhalt für die Startseite -->
+            <form id="issue-form">
+                <input type="text" name="title" id="title" placeholder="Titel" required>
+                <textarea name="content" id="content" placeholder="Thema" required></textarea>
+                <button type="submit">Thema einreichen</button>
+            </form>
         </section>
+        <div id="issues-container"></div>
     </main>
 
     <footer>
