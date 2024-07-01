@@ -1,6 +1,7 @@
 import setLanguageByLocation from "./language.js"; // Importiert die Funktion zur Einstellung der Sprache basierend auf der Benutzerlocation
 import init from "./games.js"; // Importiert die Initialisierungsfunktion für Spiele
-import initializeContactForm from "./contact.js";
+import initializeContactForm from "./contact.js"; // Importiert die Initialisierungsfunktion für das Kontaktformular
+import initializeForum from "./forum.js"; // Importiert die Initialisierungsfunktion für das Forum
 
 setLanguageByLocation(); // Setzt die Sprache basierend auf der Benutzerlocation
 
@@ -9,9 +10,17 @@ if (window.location.pathname === "/game.html") {
   init(); // Initialisiert die Spiele
 }
 
+// Wenn die aktuelle URL "/contact.html" ist
 if (window.location.pathname === "/contact.html") {
   document.addEventListener("DOMContentLoaded", function () {
-    initializeContactForm();
+    initializeContactForm(); // Initialisiert das Kontaktformular
+  });
+}
+
+// Wenn die aktuelle URL "/forum.html" ist
+if (window.location.pathname === "/forum.html") {
+  document.addEventListener("DOMContentLoaded", function () {
+    initializeForum(); // Initialisiert das Forum
   });
 }
 
@@ -21,6 +30,7 @@ let menuList = document.querySelector(".menu-list"); // Referenziert das erste E
 let keyboardArrows = document.querySelectorAll(".arrow_down"); // Referenziert alle Elemente mit der Klasse "arrow_down"
 let mushroomCursor = document.querySelector(".mushroom"); // Referenziert das Element mit der Klasse "mushroom"
 let links = document.querySelectorAll("a"); // Referenziert alle "a"-Elemente
+let button = document.querySelectorAll("button"); // Referenziert alle "button"-Elemente
 
 window.onscroll = function () {
   // Funktion, die beim Scrollen ausgelöst wird
@@ -78,6 +88,34 @@ links.forEach((link) => {
     mushroomCursor.alt = newImage.alt; // Altes Bild-Alt ersetzen
     mushroomCursor.style.animationName = "none"; // Animation deaktivieren
     mushroomCursor.style.transform = "rotate(30deg)"; // Bewegung um 30° drehen
+  });
+
+  link.addEventListener("mouseleave", function () {
+    // Altes Bild-Element erstellen und ersetzen
+    const oldImage = document.createElement("img"); // Altes Bild-Element erstellen
+    oldImage.src = "./src/assets/icons/super_mario_mushroom.png"; // Bild-Source setzen
+    oldImage.alt = "mushroom"; // Bild-Alt setzen
+
+    // Neues Bild entfernen und altes Bild hinzufügen
+    mushroomCursor.src = oldImage.src; // Altes Bild-Source ersetzen
+    mushroomCursor.alt = oldImage.alt; // Altes Bild-Alt ersetzen
+    mushroomCursor.style.animationName = ""; // Animation ausblenden
+  });
+});
+
+// Für jedes "button"-Element Event-Listener hinzufügen
+button.forEach((link) => {
+  link.addEventListener("mouseenter", function () {
+    // Neues Bild setzen
+    const newImage = document.createElement("img"); // Neues Bild-Element erstellen
+    newImage.src = "./src/assets/icons/super_mario_hand.png"; // Bild-Source setzen
+    newImage.alt = "hand"; // Bild-Alt setzen
+
+    // Altes Bild entfernen und neues Bild hinzufügen
+    mushroomCursor.src = newImage.src; // Altes Bild-Source ersetzen
+    mushroomCursor.alt = newImage.alt; // Altes Bild-Alt ersetzen
+    mushroomCursor.style.animationName = "none"; // Animation deaktivieren
+    mushroomCursor.style.transform = "rotate(-30deg)"; // Bewegung um 30° drehen
   });
 
   link.addEventListener("mouseleave", function () {
