@@ -14,29 +14,30 @@
 </head>
 
 <body>
-    <img src="./src/assets/icons/super_mario_mushroom.png" alt="mushroom" class="mushroom">
-    <a id="backtop">
+
+    <img src="./src/assets/icons/super_mario_mushroom.png" alt="Dekorativer Mario-Pilz" class="mushroom">
+    <a id="backtop" aria-label="Zurück nach oben">
         <span class="material-symbols-outlined">
             vertical_align_top
         </span>
     </a>
     <header>
-        <img src="./src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
+        <img src="src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
             class="logo-controller">
-
-        <button type="button" class="nav-toggle" aria-label="Toggle navigation">
-            <span class="material-symbols-outlined arrow_down">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu"
+            aria-label="Toggle navigation">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
         </button>
 
-        <nav class="menu-list">
+        <nav class="menu-list" role="navigation" aria-label="Hauptmenü">
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutme.html">Über mich</a></li>
@@ -47,19 +48,19 @@
         </nav>
     </header>
 
-    <main>
-        <section id="data_privacy">
-            <h2>Datenschutzerklärung</h2>
-            <!-- Hier kommt der Inhalt für die Startseite -->
+    <main role="main">
+        <section id="data_privacy" aria-labelledby="data_privacy-heading">
+            <h2 id="data_privacy-heading">Datenschutzerklärung</h2>
+            <!-- Hier kommt der Inhalt für die Datenschutzerklärung -->
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2024 Mein Portfolio. Alle Rechte vorbehalten.</p>
-        <nav>
+        <nav aria-label="Fusszeilenmenü">
             <ul>
                 <li><a href="impressum.html">Impressum</a></li>
-                <li><a href="datenschutz.html" class="current">Datenschutzerklärung</a></li>
+                <li><a href="datenschutz.html" class="current" aria-current="page">Datenschutzerklärung</a></li>
             </ul>
         </nav>
     </footer>

@@ -14,29 +14,29 @@
 </head>
 
 <body>
-    <img src="./src/assets/icons/super_mario_mushroom.png" alt="mushroom" class="mushroom">
-    <a id="backtop">
+    <img src="./src/assets/icons/super_mario_mushroom.png" alt="Dekorativer Mario-Pilz" class="mushroom">
+    <a id="backtop" aria-label="Zurück nach oben">
         <span class="material-symbols-outlined">
             vertical_align_top
         </span>
     </a>
     <header>
-        <img src="./src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
+        <img src="src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
             class="logo-controller">
-
-        <button type="button" class="nav-toggle" aria-label="Toggle navigation">
-            <span class="material-symbols-outlined arrow_down">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu"
+            aria-label="Toggle navigation">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
         </button>
 
-        <nav class="menu-list">
+        <nav class="menu-list" role="navigation" aria-label="Hauptmenü">
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutme.html">Über mich</a></li>
@@ -47,39 +47,57 @@
         </nav>
     </header>
 
-    <main>
-        <section id="impressum">
-            <h2>Impressum</h2>
-            <h3>Verantwortlich für den Inhalt</h3>
-            <p>Markus Bürgi</p>
-            <p>Semester für Webengineering</p>
+    <main role="main">
+        <section id="impressum" aria-labelledby="impressum-heading">
+            <h2 id="impressum-heading">Impressum</h2>
 
-            <h2>Kontakt</h2>
-            <p><a href="/contact.html">Zum Kontaktformular</a></p>
+            <section aria-labelledby="verantwortlich-heading">
+                <h3 id="verantwortlich-heading">Verantwortlich für den Inhalt</h3>
+                <p>Markus Bürgi</p>
+                <p>Semester für Webengineering</p>
+            </section>
 
-            <h2>Haftungsausschluss</h2>
-            <h3>Haftung für Inhalte</h3>
-            <p>Die Inhalte dieser Seiten wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
-                Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+            <section aria-labelledby="kontakt-heading">
+                <h2 id="kontakt-heading">Kontakt</h2>
+                <p><a href="/contact.html">Zum Kontaktformular</a></p>
+            </section>
 
-            <h3>Haftung für Links</h3>
-            <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben.
-                Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
-                verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+            <section aria-labelledby="haftungsausschluss-heading">
+                <h2 id="haftungsausschluss-heading">Haftungsausschluss</h2>
+            </section>
 
-            <h3>Urheberrecht</h3>
-            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
-                schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
-                ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors
-                bzw. Erstellers.</p>
+            <section aria-labelledby="haftung-inhalte-heading">
+                <h3 id="haftung-inhalte-heading">Haftung für Inhalte</h3>
+                <p>Die Inhalte dieser Seiten wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
+                    und
+                    Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+            </section>
+
+            <section aria-labelledby="haftung-links-heading">
+                <h3 id="haftung-links-heading">Haftung für Links</h3>
+                <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss
+                    haben.
+                    Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+                    verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+            </section>
+
+            <section aria-labelledby="urheberrecht-heading">
+                <h3 id="urheberrecht-heading">Urheberrecht</h3>
+                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+                    schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+                    Verwertung
+                    ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen
+                    Autors
+                    bzw. Erstellers.</p>
+            </section>
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2024 Mein Portfolio. Alle Rechte vorbehalten.</p>
-        <nav>
+        <nav aria-label="Fusszeilenmenü">
             <ul>
-                <li><a href="impressum.html" class="current">Impressum</a></li>
+                <li><a href="impressum.html" class="current" aria-current="page">Impressum</a></li>
                 <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
             </ul>
         </nav>

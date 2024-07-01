@@ -14,31 +14,31 @@
 </head>
 
 <body>
-    <img src="./src/assets/icons/super_mario_mushroom.png" alt="mushroom" class="mushroom">
-    <a id="backtop">
-        <span class="material-symbols-outlined">
+    <img src="./src/assets/icons/super_mario_mushroom.png" alt="Dekorativer Mario-Pilz" class="mushroom">
+    <a id="backtop" aria-label="Zurück nach oben">
+        <span class="material-symbols-outlined" aria-hidden="true">
             vertical_align_top
         </span>
     </a>
     <header>
-        <img src="./src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
+        <img src="./src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller Logo"
             class="logo-controller">
 
-        <button type="button" class="nav-toggle" aria-label="Toggle navigation">
-            <span class="material-symbols-outlined arrow_down">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu" title="Toggle Navigation">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
         </button>
 
-        <nav class="menu-list">
+        <nav class="menu-list" role="navigation" aria-label="Hauptmenü">
             <ul id="menu">
-                <li><a href="index.html" class="current">Home</a></li>
+                <li><a href="index.html" class="current" aria-current="page">Home</a></li>
                 <li><a href="aboutme.html">Über mich</a></li>
                 <li><a href="specifications.html">Spezifikationen</a></li>
                 <li><a href="game.html">SNES Spielen</a></li>
@@ -47,49 +47,60 @@
         </nav>
     </header>
 
-    <main>
-        <section id="home">
-            <h2>Willkommen in der Welt des Super Nintendo</h2>
+    <main role="main">
+        <section id="home" aria-labelledby="welcome-heading">
+            <h2 id="welcome-heading">Willkommen in der Welt des Super Nintendo</h2>
             <p>Entdecke die besten Spiele und nostalgische Gaming-Reisen.</p>
         </section>
-        <section id="about">
-            <h2>Über den Super Nintendo Entertainment System (SNES)</h2>
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">Über den Super Nintendo Entertainment System (SNES)</h2>
             <p>
                 Der Super Nintendo Entertainment System, auch bekannt als SNES, wurde 1990 in Japan und 1991 weltweit
                 veröffentlicht. Mit seiner fortschrittlichen Grafik und einem beeindruckenden Spielekatalog setzte der
                 SNES neue Massstäbe und bleibt bis heute ein Liebling vieler Retro-Gamer.
             </p>
         </section>
-        <section id="top-games">
-            <h2>Top SNES-Spiele</h2>
-            <div class="top-games-container">
-                <span><strong>Super Mario World</strong></span>
-                <img src="./src/assets/images/image/SuperMarioWorld.jpg" alt="Super Mario World" class="top-games-img">
-                <span><strong>The Legend of Zelda: A Link to the Past</strong></span>
-                <img src="./src/assets/images/image/TheLegendOfZeldaALinkToThePast.jpg"
-                    alt="The Legend of Zelda: A Link to the Past" class="top-games-img">
-                <span><strong>Donkey Kong Country</strong></span>
-                <img src="./src/assets/images/image/DonkeyKongCountry.jpg" alt="Donkey Kong Country"
-                    class="top-games-img">
-                <span><strong>Mega Man X</strong></span>
-                <img src="./src/assets/images/image/MegaManX.jpg" alt="Mega Man X" class="top-games-img">
-                <span><strong>Super Metroid</strong></span>
-                <img src="./src/assets/images/image/SuperMetroid.jpg" alt="Super Metroid" class="top-games-img">
+        <section id="top-games" aria-labelledby="top-games-heading">
+            <h2 id="top-games-heading">Top SNES-Spiele</h2>
+            <div class="top-games-container" role="list" aria-label="Top SNES-Spiele">
+                <div role="listitem">
+                    <img src="./src/assets/images/image/SuperMarioWorld.jpg" alt="Super Mario World"
+                        class="top-games-img">
+                    <span><strong>Super Mario World</strong></span>
+                </div>
+                <div role="listitem">
+                    <img src="./src/assets/images/image/TheLegendOfZeldaALinkToThePast.jpg"
+                        alt="The Legend of Zelda: A Link to the Past" class="top-games-img">
+                    <span><strong>The Legend of Zelda: A Link to the Past</strong></span>
+                </div>
+                <div role="listitem">
+                    <img src="./src/assets/images/image/DonkeyKongCountry.jpg" alt="Donkey Kong Country"
+                        class="top-games-img">
+                    <span><strong>Donkey Kong Country</strong></span>
+                </div>
+                <div role="listitem">
+                    <img src="./src/assets/images/image/MegaManX.jpg" alt="Mega Man X" class="top-games-img">
+                    <span></span><strong>Mega Man X</strong></span>
+                </div>
+                <div role="listitem">
+                    <img src="./src/assets/images/image/SuperMetroid.jpg" alt="Super Metroid" class="top-games-img">
+                    <span><strong>Super Metroid</strong></span>
+                </div>
             </div>
         </section>
-        <section id="id">
-            <h2>Community</h2>
+        <section id="community" aria-labelledby="community-heading">
+            <h2 id="community-heading">Community</h2>
             <p>
                 Werde Teil unserer SNES-Community! Tausche dich mit anderen Retro-Gaming-Enthusiasten aus und entdecke
                 neue Tipps und Tricks.
             </p>
-            <a href="forum.html">Zum Forum</a>
+            <a href="forum.html" aria-label="Zum Forum">Zum Forum</a>
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2024 Mein Portfolio. Alle Rechte vorbehalten.</p>
-        <nav>
+        <nav aria-label="Fusszeilenmenü">
             <ul>
                 <li><a href="impressum.html">Impressum</a></li>
                 <li><a href="datenschutz.html">Datenschutzerklärung</a></li>

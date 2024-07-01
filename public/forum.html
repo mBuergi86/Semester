@@ -14,29 +14,30 @@
 </head>
 
 <body>
-    <img src="./src/assets/icons/super_mario_mushroom.png" alt="mushroom" class="mushroom">
-    <a id="backtop">
+
+    <img src="./src/assets/icons/super_mario_mushroom.png" alt="Dekorativer Mario-Pilz" class="mushroom">
+    <a id="backtop" aria-label="Zurück nach oben">
         <span class="material-symbols-outlined">
             vertical_align_top
         </span>
     </a>
     <header>
-        <img src="./src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
+        <img src="src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
             class="logo-controller">
-
-        <button type="button" class="nav-toggle" aria-label="Toggle navigation">
-            <span class="material-symbols-outlined arrow_down">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu"
+            aria-label="Toggle navigation">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
         </button>
 
-        <nav class="menu-list">
+        <nav class="menu-list" role="navigation" aria-label="Hauptmenü">
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutme.html">Über mich</a></li>
@@ -47,21 +48,34 @@
         </nav>
     </header>
 
-    <main>
-        <section id="impressum">
-            <h2>Forum</h2>
-            <form id="issue-form">
-                <input type="text" name="title" id="title" placeholder="Titel" required>
-                <textarea name="content" id="content" placeholder="Thema" required></textarea>
-                <button type="submit">Thema einreichen</button>
+    <main role="main">
+        <section id="impressum" aria-labelledby="impressum-heading">
+            <h2 id="impressum-heading">Forum</h2>
+            <form id="issue-form" aria-labelledby="issue-form-heading">
+                <h2 id="issue-form-heading">Neues Thema erstellen</h2>
+                <div>
+                    <label for="title">Titel:</label><br>
+                    <input type="text" name="title" id="title" placeholder="Titel" required aria-required="true">
+                </div>
+                <div>
+                    <label for="content">Thema:</label><br>
+                    <textarea name="content" id="content" placeholder="Thema" required aria-required="true"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Thema einreichen</button>
+                </div>
             </form>
         </section>
-        <div id="issues-container"></div>
+        <section aria-labelledby="forum-topics-heading">
+            <h2 id="forum-topics-heading">Forumsbeiträge</h2>
+            <div id="issues-container" role="log" aria-live="polite"></div>
+        </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2024 Mein Portfolio. Alle Rechte vorbehalten.</p>
-        <nav>
+        <nav aria-label="Fusszeilenmenü">
             <ul>
                 <li><a href="impressum.html">Impressum</a></li>
                 <li><a href="datenschutz.html">Datenschutzerklärung</a></li>

@@ -14,32 +14,32 @@
 </head>
 
 <body>
-    <img src="./src/assets/icons/super_mario_mushroom.png" alt="mushroom" class="mushroom">
-    <a id="backtop">
-        <span class="material-symbols-outlined">
+    <img src="./src/assets/icons/super_mario_mushroom.png" alt="Dekorativer Mario-Pilz" class="mushroom">
+    <a id="backtop" aria-label="Zurück nach oben">
+        <span class="material-symbols-outlined" aria-hidden="true">
             vertical_align_top
         </span>
     </a>
     <header>
-        <img src="src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller"
+        <img src="./src/assets/images/image/snes-controller-transparent.png" alt="SNES Controller Logo"
             class="logo-controller">
-                
-        <button type="button" class="nav-toggle" aria-label="Toggle navigation">
-            <span class="material-symbols-outlined arrow_down">
+
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu" title="Toggle Navigation">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
-            <span class="material-symbols-outlined arrow_down">
+            <span class="material-symbols-outlined arrow_down" aria-hidden="true">
                 keyboard_arrow_down
             </span>
         </button>
 
-        <nav class="menu-list">
+        <nav class="menu-list" role="navigation" aria-label="Hauptmenü">
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="aboutme.html" class="current">Über mich</a></li>
+                <li><a href="aboutme.html" class="current" aria-current="page">Über mich</a></li>
                 <li><a href="specifications.html">Spezifikationen</a></li>
                 <li><a href="game.html">SNES Spielen</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
@@ -47,14 +47,13 @@
         </nav>
     </header>
 
-    <main>
-        <section id="about">
-            <h2>Über mich</h2>
-            <!-- Hier kommt der Inhalt für den "Über mich"-Bereich -->
+    <main role="main">
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">Über mich</h2>
             <div class="flex-article">
                 <div class="section-left">
-                    <div class="section">
-                        <h3>Hallo und herzlich willkommen!</h3>
+                    <div class="section" aria-labelledby="welcome-heading">
+                        <h3 id="welcome-heading">Hallo und herzlich willkommen!</h3>
                         <p>Mein Name ist Markus Bürgi und ich bin ein leidenschaftlicher Gamer mit einer besonderen
                             Liebe
                             für Retro-Spiele, insbesondere für den Super Nintendo. Schon als Kind war ich fasziniert von
@@ -64,8 +63,8 @@
                             Welt der Videospiele entfacht.</p>
                     </div>
 
-                    <div class="section">
-                        <h3>Meine Gaming-Reise</h3>
+                    <div class="section" aria-labelledby="journey-heading">
+                        <h3 id="journey-heading">Meine Gaming-Reise</h3>
                         <p>
                             Meine Reise in die Welt der Videospiele begann mit dem Super Nintendo Entertainment System
                             (SNES). Es war ein Geschenk zu meinem siebten Geburtstag und von dem Moment an war ich
@@ -75,8 +74,8 @@
                         </p>
                     </div>
 
-                    <div class="section">
-                        <h3>Warum ich diese Webseite gestartet habe</h3>
+                    <div class="section" aria-labelledby="why-heading">
+                        <h3 id="why-heading">Warum ich diese Webseite gestartet habe</h3>
                         <p>
                             Mit dieser Webseite möchte ich meine Begeisterung für Retro-Gaming und insbesondere für den
                             Super Nintendo mit anderen teilen. Hier findest du Reviews, Tipps und Tricks, Retrospektiven
@@ -86,8 +85,8 @@
                         </p>
                     </div>
 
-                    <div class="section">
-                        <h3>Mehr über mich</h3>
+                    <div class="section" aria-labelledby="more-heading">
+                        <h3 id="more-heading">Mehr über mich</h3>
                         <p>
                             Neben dem Gaming liebe ich es, Geschichten zu erzählen und meine Erlebnisse mit anderen zu
                             teilen. Wenn ich nicht gerade vor dem Bildschirm sitze, geniesse ich es, in der Natur zu
@@ -95,8 +94,8 @@
                             Lebens zu schätzen.
                         </p>
                     </div>
-                    <div class="section">
-                        <h3>Let’s Connect!</h3>
+                    <div class="section" aria-labelledby="connect-heading">
+                        <h3 id="connect-heading">Let’s Connect!</h3>
                         <p>
                             Ich freue mich darauf, meine Erfahrungen und mein Wissen mit euch zu teilen. Zögere nicht,
                             mich zu kontaktieren, wenn du Fragen hast oder einfach nur über die guten alten Zeiten
@@ -106,15 +105,15 @@
                     </div>
                 </div>
                 <div class="section-img">
-                    <img src="src/assets/images/image/snes.png" alt="Super Nintendo Wallpaper">
+                    <img src="src/assets/images/image/snes.png" alt="Super Nintendo Entertainment System Konsole">
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2024 Mein Portfolio. Alle Rechte vorbehalten.</p>
-        <nav>
+        <nav aria-label="Fusszeilenmenü">
             <ul>
                 <li><a href="impressum.html">Impressum</a></li>
                 <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
