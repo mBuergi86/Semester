@@ -95,7 +95,6 @@ links.forEach((link) => {
 
 // Funktion, die beim Klicken auf das "mushroom"-Element ausgelöst wird
 window.addEventListener("mouseup", function (e) {
-  console.log("Mushroom clicked!");
   // Wenn das "mushroom"-Element geklickt wird
   // Neues Span-Element erstellen
   const newSpan = document.createElement("span"); // Neues Span-Element erstellen
@@ -118,6 +117,5 @@ window.addEventListener("mouseup", function (e) {
   // Span-Element nach der Animation entfernen
   newSpan.addEventListener("animationend", function () {
     newSpan.remove();
-    console.log("Span removed!");
   });
 });
