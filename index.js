@@ -44,13 +44,17 @@ const startServer = () => {
             const { name, email, subject, message } = body;
 
             await transporter.sendMail({
-              from: `"Conact Form" <${process.env.MAIL_USER}>`,
-              to: process.env.MAIL_TO,
+              from: `"${name}" <${email}>`, // Sender's name and email from the form
+              to: process.env.EMAIL_TO, // Your email address
+              replyTo: email,
               subject: `New Contact Form Submission: ${subject}`,
               text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-              html: `<p><strong>Name:</strong> ${name}</p>
+              html: `
+                    <p><strong>Name:</strong> ${name}</p>
                     <p><strong>Email:</strong> ${email}</p>
-                    <p><strong>Message:</strong> ${message}</p>`,
+                    <p><strong>Message:</strong></p> 
+                    <p>${message}</p>
+                  `,
             });
 
             return new Response(
