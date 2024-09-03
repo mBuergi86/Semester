@@ -160,6 +160,23 @@ footer {
 }
 
 /* ID-Selektoren */
+#alphabet-nav a {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0.3rem;
+    padding-top: 0.3rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.2rem;
+    font-size: .8rem;
+    text-align: center;
+}
+
+#alphabet-nav a:active {
+    color: var(--background-color);
+}
+
 #backtop {
     background-color: var(--primary-color);
     outline: 2px solid white;
@@ -283,6 +300,20 @@ footer {
     background-color: var(--background-color);
     outline: 2px solid var(--secondary-color);
     transform: scale(0.9);
+}
+
+#pagination-container button{
+  margin: 0.8rem .8rem;
+  padding: .4rem .8rem;
+  background-color: var(--secondary-color);
+  color: white;
+  cursor: none;
+  border-radius: 0.3rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#pagination-container span {
+  margin: 0 .8rem;
 }
 
 /* Pseudoklassen und spezifische Stile */
